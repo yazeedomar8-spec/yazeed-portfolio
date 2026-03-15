@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yazeed Portfolio · modular</title>
+</head>
+<body>
+
+  <!-- ========== HTML (structure only) ========== -->
+  <header>
+    <nav>
+      <h1>YAZEED</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="container hero">
+    <div>
+      <div class="tag">IT Graduate</div>
+      <h2>YAZEED MUAWIA OMER AHMED</h2>
+      <p>
+        I am an IT graduate with a strong interest in programming, data analysis,
+        and problem-solving. I am a fast learner who enjoys understanding data,
+        interpreting results, and exploring future insights.
+      </p>
+
+      <div class="buttons">
+        <a href="#contact" class="btn btn-dark">Contact Me</a>
+        <a href="#experience" class="btn btn-light">View Experience</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <p style="color:#64748b; font-size:14px;">Current Role</p>
+      <h3>Document Controller</h3>
+      <p style="margin-bottom:20px;">Dahalwi Co. Company</p>
+
+      <p style="color:#64748b; font-size:14px;">Interests</p>
+      <p style="margin-bottom:20px;">Chess, Music, Data Analysis, Programming</p>
+
+      <p style="color:#64748b; font-size:14px;">Email</p>
+      <p>yazeedomar8@gmail.com</p>
+    </div>
+  </section>
+
+  <section id="about" class="container about">
+    <div class="section-title">About Me</div>
+    <h2 class="section-heading">A motivated graduate building a strong professional path</h2>
+    <p>
+      My name is Yazeed, and I am an IT graduate with a solid foundation in programming
+      and office tools. I enjoy learning quickly, working in an organized way, and
+      improving my technical skills through real-world experience.
+    </p>
+    <p>
+      I also have a strong interest in data and how it can be analyzed to understand
+      meaning and support future decisions. I am currently working as a Document Controller
+      at Dahalwi Co. Company, where I support document organization, accuracy, and workflow efficiency.
+    </p>
+  </section>
+
+  <!-- skills section with id for js -->
+  <section id="skills" class="light-section">
+    <div class="container">
+      <div class="section-title">Skills</div>
+      <h2 class="section-heading">Tools and strengths</h2>
+
+      <!-- added data attribute for potential future use, but js will target class -->
+      <div class="skills-grid" id="skillsGrid">
+        <div class="skill-box">English Communication</div>
+        <div class="skill-box">Microsoft Office</div>
+        <div class="skill-box">Python</div>
+        <div class="skill-box">C#</div>
+        <div class="skill-box">PHP</div>
+        <div class="skill-box">Document Control</div>
+        <div class="skill-box">Data Analysis Basics</div>
+        <div class="skill-box">Fast Learning</div>
+        <div class="skill-box">Analytical Thinking</div>
+        <div class="skill-box">Attention to Detail</div>
+      </div>
+      <!-- small hint (optional, but shows js behaviour) -->
+      <p style="font-size:14px; color:#64748b; margin-top:16px;">✨ click on any skill to highlight it (JS interaction)</p>
+    </div>
+  </section>
+
+  <section id="experience" class="container experience">
+    <div class="section-title">Experience</div>
+    <h2 class="section-heading">Professional experience</h2>
+
+    <div class="experience-box">
+      <h3>Document Controller</h3>
+      <p style="margin-bottom:8px;">Dahalwi Co. Company</p>
+      <div class="label">Current</div>
+
+      <p style="margin-top:20px;">• Managing company and project documents in an organized and accurate manner.</p>
+      <p>• Supporting workflow efficiency by maintaining accessible and updated records.</p>
+      <p>• Assisting with document tracking, filing, and coordination.</p>
+      <p>• Contributing to a structured work environment with strong attention to detail.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container contact">
+      <div class="section-title" style="color:#94a3b8;">Contact</div>
+      <h2 class="section-heading">Let’s connect</h2>
+      <p>
+        I am open to professional opportunities where I can contribute, learn,
+        and grow in the field of IT and technology.
+      </p>
+
+      <div class="email-box">
+        <p style="font-size:14px; color:#cbd5e1;">Email</p>
+        <a href="mailto:yazeedomar8@gmail.com">yazeedomar8@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Yazeed Muawia Omer Ahmed. All rights reserved.
+  </footer>
+
+  <!-- ============= JAVASCRIPT (separated) ============= -->
+  <script>
+    (function() {
+      // ----- strict separation: JS adds interaction to skill boxes -----
+      const skillBoxes = document.querySelectorAll('.skill-box');
+
+      // remove any previous highlight and add new one on click
+      function removeHighlight() {
+        skillBoxes.forEach(box => box.classList.remove('highlight'));
+      }
+
+      skillBoxes.forEach(box => {
+        box.addEventListener('click', function(e) {
+          // optional: prevent any event quirks
+          e.stopPropagation(); 
+          // if the clicked box is already highlighted? we could toggle, but spec says "highlight when clicked" — we'll make it exclusive.
+          if (this.classList.contains('highlight')) {
+            // if you want to allow un-highlight, we remove all (or just this)
+            this.classList.remove('highlight');
+          } else {
+            removeHighlight();        // remove from others
+            this.classList.add('highlight'); // highlight current
+          }
+        });
+      });
+
+      // optional: click outside clears highlight (body high-level)
+      document.body.addEventListener('click', function(e) {
+        if (!e.target.classList || !e.target.classList.contains('skill-box')) {
+          // if click is not on any skill-box, remove all highlights
+          removeHighlight();
+        }
+      }, false);
+
+      // small console info (just to prove js exists separately)
+      console.log('✅ JS separated: skill boxes interactive (click to highlight)');
+    })();
+  </script>
+</body>
+</html>
