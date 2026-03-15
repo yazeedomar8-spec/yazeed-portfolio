@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yazeed Portfolio · modular</title>
+  <title>Yazeed Portfolio</title>
+  <!-- ربط ملف CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ========== HTML (structure only) ========== -->
   <header>
     <nav>
       <h1>YAZEED</h1>
@@ -64,13 +65,11 @@
     </p>
   </section>
 
-  <!-- skills section with id for js -->
   <section id="skills" class="light-section">
     <div class="container">
       <div class="section-title">Skills</div>
       <h2 class="section-heading">Tools and strengths</h2>
 
-      <!-- added data attribute for potential future use, but js will target class -->
       <div class="skills-grid" id="skillsGrid">
         <div class="skill-box">English Communication</div>
         <div class="skill-box">Microsoft Office</div>
@@ -83,8 +82,7 @@
         <div class="skill-box">Analytical Thinking</div>
         <div class="skill-box">Attention to Detail</div>
       </div>
-      <!-- small hint (optional, but shows js behaviour) -->
-      <p style="font-size:14px; color:#64748b; margin-top:16px;">✨ click on any skill to highlight it (JS interaction)</p>
+      <p style="font-size:14px; color:#64748b; margin-top:16px;">✨ اضغط على أي مهارة لتحديدها (تفاعل JavaScript)</p>
     </div>
   </section>
 
@@ -124,43 +122,7 @@
     © 2026 Yazeed Muawia Omer Ahmed. All rights reserved.
   </footer>
 
-  <!-- ============= JAVASCRIPT (separated) ============= -->
-  <script>
-    (function() {
-      // ----- strict separation: JS adds interaction to skill boxes -----
-      const skillBoxes = document.querySelectorAll('.skill-box');
-
-      // remove any previous highlight and add new one on click
-      function removeHighlight() {
-        skillBoxes.forEach(box => box.classList.remove('highlight'));
-      }
-
-      skillBoxes.forEach(box => {
-        box.addEventListener('click', function(e) {
-          // optional: prevent any event quirks
-          e.stopPropagation(); 
-          // if the clicked box is already highlighted? we could toggle, but spec says "highlight when clicked" — we'll make it exclusive.
-          if (this.classList.contains('highlight')) {
-            // if you want to allow un-highlight, we remove all (or just this)
-            this.classList.remove('highlight');
-          } else {
-            removeHighlight();        // remove from others
-            this.classList.add('highlight'); // highlight current
-          }
-        });
-      });
-
-      // optional: click outside clears highlight (body high-level)
-      document.body.addEventListener('click', function(e) {
-        if (!e.target.classList || !e.target.classList.contains('skill-box')) {
-          // if click is not on any skill-box, remove all highlights
-          removeHighlight();
-        }
-      }, false);
-
-      // small console info (just to prove js exists separately)
-      console.log('✅ JS separated: skill boxes interactive (click to highlight)');
-    })();
-  </script>
+  <!-- ربط ملف JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
