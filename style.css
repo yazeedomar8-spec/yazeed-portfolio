@@ -1,269 +1,267 @@
-  <!-- ============= CSS (separated) ============= -->
+/* -------------------- RESET & BASE -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-    /* -------------------- RESET & BASE -------------------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+body {
+  background: #ffffff;
+  color: #0f172a;
+  line-height: 1.6;
+}
 
-    body {
-      background: #ffffff;
-      color: #0f172a;
-      line-height: 1.6;
-    }
+/* -------------------- HEADER / NAV -------------------- */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #e2e8f0;
+  padding: 18px 40px;
+  z-index: 1000;
+}
 
-    /* -------------------- HEADER / NAV -------------------- */
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      border-bottom: 1px solid #e2e8f0;
-      padding: 18px 40px;
-      z-index: 1000;
-    }
+nav {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+nav h1 {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
-    nav h1 {
-      font-size: 20px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 24px;
-    }
+nav a {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 600;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #334155;
-      font-weight: 600;
-    }
+nav a:hover {
+  color: #000;
+}
 
-    nav a:hover {
-      color: #000;
-    }
+/* -------------------- LAYOUT / UTILS -------------------- */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
 
-    /* -------------------- LAYOUT / UTILS -------------------- */
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
-    }
+.section-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #64748b;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
 
-    .section-title {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: #64748b;
-      font-weight: bold;
-      margin-bottom: 14px;
-    }
+.section-heading {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
 
-    .section-heading {
-      font-size: 38px;
-      margin-bottom: 20px;
-    }
+.light-section {
+  background: #f8fafc;
+  padding: 70px 0;
+}
 
-    .light-section {
-      background: #f8fafc;
-      padding: 70px 0;
-    }
+/* -------------------- HERO -------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: center;
+  min-height: 80vh;
+}
 
-    /* -------------------- HERO -------------------- */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 40px;
-      align-items: center;
-      min-height: 80vh;
-    }
+.tag {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #64748b;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
 
-    .tag {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: #64748b;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
+.hero h2 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
 
-    .hero h2 {
-      font-size: 52px;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
+.hero p {
+  font-size: 18px;
+  color: #475569;
+  margin-bottom: 28px;
+  max-width: 700px;
+}
 
-    .hero p {
-      font-size: 18px;
-      color: #475569;
-      margin-bottom: 28px;
-      max-width: 700px;
-    }
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
 
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s ease;
-    }
+.btn-dark {
+  background: #0f172a;
+  color: white;
+}
 
-    .btn-dark {
-      background: #0f172a;
-      color: white;
-    }
+.btn-dark:hover {
+  opacity: 0.9;
+}
 
-    .btn-dark:hover {
-      opacity: 0.9;
-    }
+.btn-light {
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  background: white;
+}
 
-    .btn-light {
-      border: 1px solid #cbd5e1;
-      color: #0f172a;
-      background: white;
-    }
+.btn-light:hover {
+  background: #f8fafc;
+}
 
-    .btn-light:hover {
-      background: #f8fafc;
-    }
+.card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 30px;
+}
 
-    .card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 22px;
-      padding: 30px;
-    }
+.card h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
 
-    .card h3 {
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
+/* -------------------- ABOUT / TEXT -------------------- */
+.about p,
+.experience p,
+.contact p {
+  color: #475569;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
 
-    /* -------------------- ABOUT / TEXT -------------------- */
-    .about p,
-    .experience p,
-    .contact p {
-      color: #475569;
-      font-size: 18px;
-      margin-bottom: 16px;
-    }
+/* -------------------- SKILLS GRID -------------------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
 
-    /* -------------------- SKILLS GRID -------------------- */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 28px;
-    }
+.skill-box {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 18px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+  transition: all 0.15s;
+  cursor: default;
+}
 
-    .skill-box {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
-      padding: 18px;
-      font-weight: 600;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
-      transition: all 0.15s;
-      cursor: default;
-    }
+/* للتحديد عند الضغط بواسطة JavaScript */
+.skill-box.highlight {
+  background: #e6f0ff;
+  border-color: #3b82f6;
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(59,130,246,0.15);
+}
 
-    /* small js interaction */
-    .skill-box.highlight {
-      background: #e6f0ff;
-      border-color: #3b82f6;
-      transform: scale(1.02);
-      box-shadow: 0 8px 18px rgba(59,130,246,0.15);
-    }
+/* -------------------- EXPERIENCE -------------------- */
+.experience-box {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+  margin-top: 28px;
+}
 
-    /* -------------------- EXPERIENCE -------------------- */
-    .experience-box {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 24px;
-      padding: 30px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
-      margin-top: 28px;
-    }
+.label {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
-    .label {
-      display: inline-block;
-      padding: 8px 14px;
-      background: #e2e8f0;
-      border-radius: 999px;
-      color: #475569;
-      font-size: 14px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
+/* -------------------- CONTACT SECTION -------------------- */
+.contact-section {
+  background: #0f172a;
+  color: white;
+  padding: 70px 0;
+  margin-top: 30px;
+}
 
-    /* -------------------- CONTACT SECTION -------------------- */
-    .contact-section {
-      background: #0f172a;
-      color: white;
-      padding: 70px 0;
-      margin-top: 30px;
-    }
+.contact-section p {
+  color: #cbd5e1;
+}
 
-    .contact-section p {
-      color: #cbd5e1;
-    }
+.email-box {
+  margin-top: 25px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 24px;
+}
 
-    .email-box {
-      margin-top: 25px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 20px;
-      padding: 24px;
-    }
+.email-box a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
 
-    .email-box a {
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-    }
+.email-box a:hover {
+  text-decoration: underline;
+}
 
-    .email-box a:hover {
-      text-decoration: underline;
-    }
+/* -------------------- FOOTER -------------------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+  font-size: 14px;
+}
 
-    /* -------------------- FOOTER -------------------- */
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #64748b;
-      font-size: 14px;
-    }
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
 
-    /* -------------------- RESPONSIVE -------------------- */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
+  .hero h2 {
+    font-size: 38px;
+  }
 
-      .hero h2 {
-        font-size: 38px;
-      }
-
-      nav ul {
-        display: none;
-      }
-    }
+  nav ul {
+    display: none;
+  }
+}
