@@ -76,13 +76,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // تحديث روابط التنقل (بما أن فيها نص أيضاً)
+    // تحديث روابط التنقل
     const navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach(link => {
       if (currentLang === 'ar') {
         link.textContent = link.getAttribute('data-ar');
       } else {
         link.textContent = link.getAttribute('data-en');
+      }
+    });
+    
+    // تحديث عناوين contact (اللي ما فيها data-ar/data-en)
+    const emailLabels = document.querySelectorAll('.contact-label[data-en][data-ar]');
+    emailLabels.forEach(label => {
+      if (currentLang === 'ar') {
+        label.textContent = label.getAttribute('data-ar');
+      } else {
+        label.textContent = label.getAttribute('data-en');
       }
     });
   }
@@ -119,5 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('✅ تم تحميل JavaScript بنجاح');
   console.log('🌓 Dark Mode: متاح');
   console.log('🌐 الترجمة: عربي/إنجليزي');
-  console.log('✨ المهارات: تأثير HOVER (بدون كلك)');
+  console.log('✨ المهارات: تأثير HOVER');
+  console.log('📱 تم إضافة: رقم الجوال، LinkedIn، GitHub');
 });
