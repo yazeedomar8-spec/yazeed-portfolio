@@ -10,6 +10,77 @@ body {
   background: #ffffff;
   color: #0f172a;
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* -------------------- DARK MODE -------------------- */
+body.dark-mode {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+body.dark-mode header {
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid #334155;
+}
+
+body.dark-mode nav a {
+  color: #cbd5e1;
+}
+
+body.dark-mode nav a:hover {
+  color: #ffffff;
+}
+
+body.dark-mode .card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+body.dark-mode .card p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .btn-light {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+body.dark-mode .btn-light:hover {
+  background: #334155;
+}
+
+body.dark-mode .light-section {
+  background: #1e293b;
+}
+
+body.dark-mode .skill-box {
+  background: #0f172a;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+body.dark-mode .skill-box:hover {
+  background: #1e3a5f;
+  border-color: #3b82f6;
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(59,130,246,0.15);
+}
+
+body.dark-mode .experience-box {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+body.dark-mode .label {
+  background: #334155;
+  color: #f1f5f9;
+}
+
+body.dark-mode footer {
+  color: #94a3b8;
 }
 
 /* -------------------- HEADER / NAV -------------------- */
@@ -20,6 +91,7 @@ header {
   border-bottom: 1px solid #e2e8f0;
   padding: 18px 40px;
   z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
 nav {
@@ -28,12 +100,21 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 nav h1 {
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 nav ul {
@@ -46,10 +127,46 @@ nav a {
   text-decoration: none;
   color: #334155;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #000;
+}
+
+.theme-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .icon-btn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+.icon-btn:hover {
+  background: #f1f5f9;
+}
+
+.dark-mode .icon-btn:hover {
+  background: #334155;
 }
 
 /* -------------------- LAYOUT / UTILS -------------------- */
@@ -76,6 +193,7 @@ nav a:hover {
 .light-section {
   background: #f8fafc;
   padding: 70px 0;
+  transition: background-color 0.3s ease;
 }
 
 /* -------------------- HERO -------------------- */
@@ -107,6 +225,11 @@ nav a:hover {
   color: #475569;
   margin-bottom: 28px;
   max-width: 700px;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .hero p {
+  color: #cbd5e1;
 }
 
 .buttons {
@@ -129,6 +252,10 @@ nav a:hover {
   color: white;
 }
 
+.dark-mode .btn-dark {
+  background: #3b82f6;
+}
+
 .btn-dark:hover {
   opacity: 0.9;
 }
@@ -148,6 +275,7 @@ nav a:hover {
   border: 1px solid #e2e8f0;
   border-radius: 22px;
   padding: 30px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .card h3 {
@@ -162,9 +290,15 @@ nav a:hover {
   color: #475569;
   font-size: 18px;
   margin-bottom: 16px;
+  transition: color 0.3s ease;
 }
 
-/* -------------------- SKILLS GRID -------------------- */
+.dark-mode .about p,
+.dark-mode .experience p {
+  color: #cbd5e1;
+}
+
+/* -------------------- SKILLS GRID - مع تأثير HOVER (بدل الكلك) -------------------- */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -179,12 +313,12 @@ nav a:hover {
   padding: 18px;
   font-weight: 600;
   box-shadow: 0 3px 10px rgba(0,0,0,0.03);
-  transition: all 0.15s;
+  transition: all 0.3s ease;
   cursor: default;
 }
 
-/* للتحديد عند الضغط بواسطة JavaScript */
-.skill-box.highlight {
+/* تأثير HOVER - المهارات تتغير عند مرور الماوس */
+.skill-box:hover {
   background: #e6f0ff;
   border-color: #3b82f6;
   transform: scale(1.02);
@@ -199,6 +333,7 @@ nav a:hover {
   padding: 30px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.03);
   margin-top: 28px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .label {
@@ -210,6 +345,7 @@ nav a:hover {
   font-size: 14px;
   font-weight: bold;
   margin-top: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* -------------------- CONTACT SECTION -------------------- */
@@ -218,6 +354,7 @@ nav a:hover {
   color: white;
   padding: 70px 0;
   margin-top: 30px;
+  transition: background-color 0.3s ease;
 }
 
 .contact-section p {
@@ -249,6 +386,29 @@ footer {
   padding: 20px;
   color: #64748b;
   font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+/* -------------------- RTL (للغة العربية) -------------------- */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl .nav-controls {
+  flex-direction: row-reverse;
+}
+
+body.rtl .buttons {
+  justify-content: flex-end;
+}
+
+body.rtl .hero {
+  text-align: right;
+}
+
+body.rtl .skills-grid {
+  direction: rtl;
 }
 
 /* -------------------- RESPONSIVE -------------------- */
@@ -263,5 +423,10 @@ footer {
 
   nav ul {
     display: none;
+  }
+  
+  .nav-controls {
+    width: 100%;
+    justify-content: space-between;
   }
 }
